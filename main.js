@@ -1,8 +1,7 @@
-console.log("first");
 //// Get Data From APi
 let products = document.querySelector(".show-products");
 let sort = document.querySelector(".select-sort");
-console.log(sort);
+
 async function GetData() {
   try {
     let response = await fetch(
@@ -10,6 +9,8 @@ async function GetData() {
     );
     let res = await response.json();
     let Data = await res.data;
+   
+    //#region Products Page
 
     // sort.addEventListener("change", (e) => {
     //   let sortedFromLtoH = [...Data].sort((a, b) => a.price - b.price);
@@ -122,7 +123,6 @@ async function GetData() {
     //     }
     //   }
     // });
-
     sort.addEventListener("change", (e) => {
       let SortValue = e.target.value;
       let sortedData = [...Data]; // copy
@@ -163,6 +163,7 @@ async function GetData() {
     `;
       });
     });
+
     Data.forEach((element) => {
       products.innerHTML += `
       <div class="relative smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col">
@@ -192,6 +193,7 @@ async function GetData() {
       </div>
     `;
     });
+    //#endregion
   } catch (error) {
     products.innerHTML = `<h1 class="text-[40px] font-bold w-[90vw] mx-[20px] my-auto">
           Error While Loading Products (Check Internet)
@@ -199,4 +201,3 @@ async function GetData() {
   }
 }
 GetData();
-

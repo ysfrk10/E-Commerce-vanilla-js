@@ -3,11 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-Shop | Home</title>
-    <!-- Tailwind CSS (No JS) -->
+    <title>Iconic-Shop | Home</title>
+    <link rel="icon" href="/Y.png" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
       rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <style>
       .hide-scrollbar::-webkit-scrollbar {
@@ -45,7 +53,7 @@
           <a
             href="index.html"
             class="text-3xl font-extrabold text-blue-400 tracking-wider relative z-20"
-            >E-Shop</a
+            >Iconic</a
           >
 
           <!-- Mobile Menu Checkbox Hack -->
@@ -103,207 +111,15 @@
           class="flex justify-between items-end mb-6 border-b border-gray-700 pb-3"
         >
           <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-            Featured Offers
+            All Categories
           </h2>
-          <div
-            class="text-blue-400 text-sm flex items-center mb-1 animate-pulse font-medium"
-          >
-            <span
-              class="hidden sm:inline-block mr-2 uppercase tracking-wide text-xs"
-              >Swipe to view</span
-            >
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              ></path>
-            </svg>
-          </div>
         </div>
 
         <!-- Products CSS Slider -->
         <div
-          class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 hide-scrollbar pt-2"
-          style="scroll-snap-type: x mandatory"
-        >
-          <!-- Slider Card 1 -->
-          <div
-            class="relative w-72 sm:w-80 flex-shrink-0 snap-center smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col"
-            style="scroll-snap-align: center"
-          >
-            <a href="product-detail.html" class="absolute inset-0 z-10"
-              ><span class="sr-only">View product</span></a
-            >
-            <div class="relative h-56 rounded-t-xl overflow-hidden z-0">
-              <span
-                class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20"
-                >Sale -20%</span
-              >
-              <img
-                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80"
-                alt="Product"
-                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div
-              class="p-5 flex flex-col h-full bg-gradient-to-b from-transparent to-gray-800/50 rounded-b-xl z-0"
-            >
-              <h3 class="text-xl font-bold mb-2 text-white">
-                Wireless Headphones
-              </h3>
-              <p class="text-gray-400 text-sm mb-6 flex-grow">
-                Premium sound with active noise cancellation and 40 hour battery
-                life.
-              </p>
-              <div class="flex flex-row justify-between items-center mt-auto">
-                <div class="flex flex-col">
-                  <span class="text-gray-500 text-sm line-through relative z-20"
-                    >$249.99</span
-                  >
-                  <span class="text-2xl font-black text-blue-400 relative z-20"
-                    >$199.99</span
-                  >
-                </div>
-                <a
-                  href="#"
-                  class="relative z-20 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-sm text-white font-semibold transition-colors shadow"
-                  >Add</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Slider Card 2 -->
-          <div
-            class="relative w-72 sm:w-80 flex-shrink-0 snap-center smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col"
-            style="scroll-snap-align: center"
-          >
-            <a href="product-detail.html" class="absolute inset-0 z-10"
-              ><span class="sr-only">View product</span></a
-            >
-            <div class="relative h-56 rounded-t-xl overflow-hidden z-0">
-              <span
-                class="absolute top-3 left-3 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20"
-                >New Arrival</span
-              >
-              <img
-                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80"
-                alt="Product"
-                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div
-              class="p-5 flex flex-col h-full bg-gradient-to-b from-transparent to-gray-800/50 rounded-b-xl z-0"
-            >
-              <h3 class="text-xl font-bold mb-2 text-white">
-                Smart Watch Series 7
-              </h3>
-              <p class="text-gray-400 text-sm mb-6 flex-grow">
-                Track your fitness metrics effortlessly. Waterproof and durable.
-              </p>
-              <div class="flex flex-row justify-between items-center mt-auto">
-                <div class="flex flex-col">
-                  <span class="text-2xl font-black text-blue-400 relative z-20"
-                    >$149.99</span
-                  >
-                </div>
-                <a
-                  href="#"
-                  class="relative z-20 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-sm text-white font-semibold transition-colors shadow"
-                  >Add</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Slider Card 3 -->
-          <div
-            class="relative w-72 sm:w-80 flex-shrink-0 snap-center smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col"
-            style="scroll-snap-align: center"
-          >
-            <a href="product-detail.html" class="absolute inset-0 z-10"
-              ><span class="sr-only">View product</span></a
-            >
-            <div class="relative h-56 rounded-t-xl overflow-hidden z-0">
-              <img
-                src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&q=80"
-                alt="Product"
-                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div
-              class="p-5 flex flex-col h-full bg-gradient-to-b from-transparent to-gray-800/50 rounded-b-xl z-0"
-            >
-              <h3 class="text-xl font-bold mb-2 text-white">
-                Pro Wireless Earbuds
-              </h3>
-              <p class="text-gray-400 text-sm mb-6 flex-grow">
-                Compact design with deep immersive bass and crystal clear calls.
-              </p>
-              <div class="flex flex-row justify-between items-center mt-auto">
-                <div class="flex flex-col">
-                  <span class="text-2xl font-black text-blue-400 relative z-20"
-                    >$89.99</span
-                  >
-                </div>
-                <a
-                  href="#"
-                  class="relative z-20 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-sm text-white font-semibold transition-colors shadow"
-                  >Add</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Slider Card 4 -->
-          <div
-            class="relative w-72 sm:w-80 flex-shrink-0 snap-center smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col"
-            style="scroll-snap-align: center"
-          >
-            <a href="product-detail.html" class="absolute inset-0 z-10"
-              ><span class="sr-only">View product</span></a
-            >
-            <div class="relative h-56 rounded-t-xl overflow-hidden z-0">
-              <span
-                class="absolute top-3 left-3 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20"
-                >Best Seller</span
-              >
-              <img
-                src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&q=80"
-                alt="Product"
-                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div
-              class="p-5 flex flex-col h-full bg-gradient-to-b from-transparent to-gray-800/50 rounded-b-xl z-0"
-            >
-              <h3 class="text-xl font-bold mb-2 text-white">
-                Classic Polaroid Camera
-              </h3>
-              <p class="text-gray-400 text-sm mb-6 flex-grow">
-                Capture your memories instantly with a nostalgic retro vibe.
-              </p>
-              <div class="flex flex-row justify-between items-center mt-auto">
-                <div class="flex flex-col">
-                  <span class="text-2xl font-black text-blue-400 relative z-20"
-                    >$99.99</span
-                  >
-                </div>
-                <a
-                  href="#"
-                  class="relative z-20 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-sm text-white font-semibold transition-colors shadow"
-                  >Add</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+          class="Featured-offers grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+        ></div>
       </section>
-
       <!-- Product Grid Section -->
       <section class="mt-4">
         <div
@@ -340,31 +156,31 @@
           <div
             class="relative smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col"
           >
-            <a href="product-detail.html" class="absolute inset-0 z-10"
+            <a href="products.html" class="absolute inset-0 z-10"
               ><span class="sr-only">View product</span></a
             >
             <div class="overflow-hidden rounded-t-xl z-0">
               <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80"
+                src="https://ecommerce.routemisr.com/Route-Academy-products/1678304313006-cover.jpeg"
                 alt="Product"
                 class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div class="p-5 flex flex-col h-full bg-gray-800 rounded-b-xl z-0">
               <h3 class="text-lg font-bold mb-1 text-white">
-                Lightweight Running Shoes
+                EOS M50 Mark II Mirrorless Digital Camera With 15-45mm Lens
+                Black
               </h3>
               <p class="text-gray-400 text-sm mb-4">
-                Breathable mesh top running shoes.
+                24.1 megapixel (aps-c) cmos sensor with iso 100-25600 (h: 51200)
+                digic 8 image processor with auto lighting optimizer improved
+                dual pixel cmos af and eye detection af (still/movie servo af
+                support) 4k uhd 24p and hd 120p for slow motion vari-angle
+                touchscreen lcd convenient for vlogging and various composition
               </p>
               <div class="flex justify-between items-center mt-auto">
                 <span class="text-xl font-black text-blue-400 relative z-20"
-                  >$120.00</span
-                >
-                <a
-                  href="#"
-                  class="relative z-20 px-3 py-1.5 bg-gray-700 hover:bg-blue-600 rounded text-sm text-white font-semibold transition-colors"
-                  >Add to Cart</a
+                  >$19699.99</span
                 >
               </div>
             </div>
@@ -373,31 +189,27 @@
           <div
             class="relative smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col"
           >
-            <a href="product-detail.html" class="absolute inset-0 z-10"
+            <a href="products.html" class="absolute inset-0 z-10"
               ><span class="sr-only">View product</span></a
             >
             <div class="overflow-hidden rounded-t-xl z-0">
               <img
-                src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a?w=600&q=80"
+                src="https://ecommerce.routemisr.com/Route-Academy-products/1680401672268-cover.jpeg"
                 alt="Product"
-                class="w-full h-60 object-cover transform hover:scale-105 transition-transform duration-500"
+                class="w-full h-[100%] object-cover transform hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div class="p-5 flex flex-col h-full bg-gray-800 rounded-b-xl z-0">
               <h3 class="text-lg font-bold mb-1 text-white">
-                Virtual Reality Headset
+                Relaxed Fit Knitted Joggers Lilac
               </h3>
               <p class="text-gray-400 text-sm mb-4">
-                Immersive 3D gaming experience.
+                Colour Name Pink Department Women Material Composition Polyester
+                Blend
               </p>
               <div class="flex justify-between items-center mt-auto">
                 <span class="text-xl font-black text-blue-400 relative z-20"
-                  >$299.00</span
-                >
-                <a
-                  href="#"
-                  class="relative z-20 px-3 py-1.5 bg-gray-700 hover:bg-blue-600 rounded text-sm text-white font-semibold transition-colors"
-                  >Add to Cart</a
+                  >$499.99</span
                 >
               </div>
             </div>
@@ -406,31 +218,29 @@
           <div
             class="relative smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col"
           >
-            <a href="product-detail.html" class="absolute inset-0 z-10"
+            <a href="products.html" class="absolute inset-0 z-10"
               ><span class="sr-only">View product</span></a
             >
             <div class="overflow-hidden rounded-t-xl z-0">
               <img
-                src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80"
+                src="https://ecommerce.routemisr.com/Route-Academy-products/1680395859874-cover.jpeg"
                 alt="Product"
-                class="w-full h-60 object-cover transform hover:scale-105 transition-transform duration-500"
+                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div class="p-5 flex flex-col h-full bg-gray-800 rounded-b-xl z-0">
               <h3 class="text-lg font-bold mb-1 text-white">
-                Mechanical Keyboard
+                Court Tennis Track Pants Black
               </h3>
               <p class="text-gray-400 text-sm mb-4">
-                RGB backlit with cherry MX switches.
+                Soft and sustainable polyester fabric Elastic waist for
+                comfortable fit Multiple pockets for quick storage Wash
+                according to care label instructions Nike signature branding
+                detail.
               </p>
               <div class="flex justify-between items-center mt-auto">
                 <span class="text-xl font-black text-blue-400 relative z-20"
-                  >$150.00</span
-                >
-                <a
-                  href="#"
-                  class="relative z-20 px-3 py-1.5 bg-gray-700 hover:bg-blue-600 rounded text-sm text-white font-semibold transition-colors"
-                  >Add to Cart</a
+                  >$3159.99</span
                 >
               </div>
             </div>
@@ -439,31 +249,28 @@
           <div
             class="relative smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col"
           >
-            <a href="product-detail.html" class="absolute inset-0 z-10"
+            <a href="products.html" class="absolute inset-0 z-10"
               ><span class="sr-only">View product</span></a
             >
             <div class="overflow-hidden rounded-t-xl z-0">
               <img
-                src="https://images.unsplash.com/photo-1527443195645-1133f7f28990?w=600&q=80"
+                src="https://ecommerce.routemisr.com/Route-Academy-products/1680392257974-cover.jpeg"
                 alt="Product"
-                class="w-full h-60 object-cover transform hover:scale-105 transition-transform duration-500"
+                class="w-full h-[100%] object-cover transform hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div class="p-5 flex flex-col h-full bg-gray-800 rounded-b-xl z-0">
               <h3 class="text-lg font-bold mb-1 text-white">
-                Modern Desk Lamp
+                Crew Neck Long Sleeve Men's Tricot Sweater with Color Block
               </h3>
               <p class="text-gray-400 text-sm mb-4">
-                Adjustable brightness workspace light.
+                Tricot fabric, Tricot fabric, Ribbed ankles and bottom WASH AT
+                MAXIMUM 30 °C, DO NOT USE BLEACH, DO NOT TUMBLE DRY, IRON AT LOW
+                TEMPERATURE, DO NOT DRY CLEAN.
               </p>
               <div class="flex justify-between items-center mt-auto">
                 <span class="text-xl font-black text-blue-400 relative z-20"
-                  >$45.00</span
-                >
-                <a
-                  href="#"
-                  class="relative z-20 px-3 py-1.5 bg-gray-700 hover:bg-blue-600 rounded text-sm text-white font-semibold transition-colors"
-                  >Add to Cart</a
+                  >$549.99</span
                 >
               </div>
             </div>
@@ -494,4 +301,5 @@
       </div>
     </footer>
   </body>
+  <script src="/home.js"></script>
 </html>
