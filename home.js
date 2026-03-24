@@ -5,7 +5,7 @@ async function GetData() {
       "https://ecommerce.routemisr.com/api/v1/products",
     );
     let res = await response.json();
-    let Data = await res.data;
+    let Data = res.data;
     let categoryImg = Data.map((element) => {
       return element.category.image;
     });
@@ -36,4 +36,6 @@ async function GetData() {
         </h1>`;
   }
 }
-GetData();
+document.addEventListener("DOMContentLoaded", () => {
+  GetData();
+});
