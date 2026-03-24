@@ -154,8 +154,8 @@ async function GetData() {
               ${element.price} $
             </span>
 
-            <a href="#" class="px-3 py-1.5 bg-gray-700 hover:bg-blue-600 rounded text-sm text-white">
-              Add
+            <a href="#" onclick="event.preventDefault(); addToCart('${element.id}', \`${element.title.replace(/`/g, '')}\`, ${element.price}, '${element.imageCover}')" class="px-3 py-1.5 bg-gray-700 hover:bg-blue-600 rounded text-sm text-white transition-colors flex items-center gap-1 shadow-lg shadow-blue-500/20">
+              <i class="fas fa-cart-plus"></i> Add
             </a>
           </div>
         </div>
@@ -185,8 +185,8 @@ async function GetData() {
               ${element.price} $
             </span>
 
-            <a href="#" class="px-3 py-1.5 bg-gray-700 hover:bg-blue-600 rounded text-sm text-white">
-              Add
+            <a href="#" onclick="event.preventDefault(); addToCart('${element.id}', \`${element.title.replace(/`/g, '')}\`, ${element.price}, '${element.imageCover}')" class="px-3 py-1.5 bg-gray-700 hover:bg-blue-600 rounded text-sm text-white transition-colors flex items-center gap-1 shadow-lg shadow-blue-500/20">
+              <i class="fas fa-cart-plus"></i> Add
             </a>
           </div>
         </div>
