@@ -15,7 +15,7 @@ function addToCart(id, name, price, image) {
   saveCart();
   openCartDrawer();
   showToast(`${name} added to cart`);
-}
+} 
 
 function removeFromCart(id) {
   cart = cart.filter((item) => item.id !== id);
@@ -32,15 +32,6 @@ function updateQuantity(id, change) {
       saveCart();
     }
   }
-}
-
-function openCartDrawer() {
-  document.getElementById("cart-drawer").style.transform = "translateX(0)";
-}
-
-function closeCartDrawer() {
-  document.getElementById("cart-drawer").style.transform = "translateX(320px)";
-  document.getElementById("cart-drawer").style.display = "none";
 }
 
 function updateCartUI() {
@@ -88,35 +79,78 @@ function updateCartUI() {
   cartCountElements.forEach((el) => (el.innerText = countNum.toString()));
 }
 
+function openCartDrawer() {
+  const drawer = document.getElementById("cart-drawer");
+  const overlay = document.getElementById("overlay");
+  if (!drawer || !overlay) return;
+  overlay.classList.remove("hidden");
+  setTimeout(() => {
+    drawer.classList.remove("translate-x-full");
+  }, 10);
+}
+
+function closeCartDrawer() {
+  const drawer = document.getElementById("cart-drawer");
+  const overlay = document.getElementById("overlay");
+  if (!drawer || !overlay) return;
+  drawer.classList.add("translate-x-full");
+
+  setTimeout(() => {
+    overlay.classList.add("hidden");
+  }, 300);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Inject cart HTML
   const body = document.body;
   const cartHTML = `
-    <!-- Cart Drawer -->
-    <div id="cart-drawer" class="fixed inset-y-0 right-0 w-80 bg-gray-900 border-l border-gray-700 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-5 flex flex-col">
-      <div class="p-4 border-b border-gray-700 flex justify-between items-center bg-gray-800">
-        <h2 class="text-xl font-bold text-white"><i class="fas fa-shopping-cart text-blue-400 mr-2"></i>Your Cart</h2>
-        <button onclick="closeCartDrawer()" class="text-gray-400 hover:text-white transition-colors">
-          <i class="fas fa-times text-xl"></i>
-        </button>
-      </div>
-      <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-4 hide-scrollbar">
-      </div>
-      <div class="p-4 border-t border-gray-700 bg-gray-800">
-        <div class="flex justify-between items-center mb-4">
-          <span class="text-gray-300 font-semibold">Total:</span>
-          <span id="cart-total" class="text-xl font-black text-blue-400">$0.00</span>
-        </div>
-        <button class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg shadow-lg shadow-blue-500/30 transition-all">
-          Checkout
-        </button>
-      </div>
-    </div>
-   
-  `;
+  <!-- Overlay -->
+  <div id="overlay"
+       class="fixed inset-0 bg-black/50 hidden z-40"></div>
 
-  // Append to body safely
+  <!-- Cart Drawer -->
+  <div id="cart-drawer"
+       class="fixed inset-y-0 right-0 w-80 bg-gray-900 border-l border-gray-700 shadow-2xl
+              transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col">
+
+    <!-- Header -->
+    <div class="p-4 border-b border-gray-700 flex justify-between items-center bg-gray-800">
+      <h2 class="text-xl font-bold text-white">
+        <i class="fas fa-shopping-cart text-blue-400 mr-2"></i>Your Cart
+      </h2>
+      <button onclick="closeCartDrawer()" class="text-gray-400 hover:text-white">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Items -->
+    <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-4">
+    </div>
+
+    <!-- Footer -->
+    <div class="p-4 border-t border-gray-700 bg-gray-800">
+      <div class="flex justify-between items-center mb-4">
+        <span class="text-gray-300 font-semibold">Total:</span>
+        <span id="cart-total" class="text-xl font-black text-blue-400">$0.00</span>
+      </div>
+
+      <button class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg">
+        Checkout
+      </button>
+    </div>
+
+  </div>
+`;
+
+  // Append to body safely FIRST
   body.insertAdjacentHTML("beforeend", cartHTML);
+
+  const drawer = document.getElementById("cart-drawer");
+  const overlay = document.getElementById("overlay");
+
+  if (overlay) {
+    overlay.addEventListener("click", closeCartDrawer);
+  }
 
   updateCartUI();
 
