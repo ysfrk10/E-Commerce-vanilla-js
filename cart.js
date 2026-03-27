@@ -15,7 +15,7 @@ function addToCart(id, name, price, image) {
   saveCart();
   openCartDrawer();
   showToast(`${name} added to cart`);
-} 
+}
 
 function removeFromCart(id) {
   cart = cart.filter((item) => item.id !== id);
@@ -36,10 +36,11 @@ function updateQuantity(id, change) {
 
 function showToast(message) {
   const toast = document.createElement("div");
-  toast.className = "fixed bottom-5 right-5 bg-green-500 text-white px-6 py-3 rounded shadow-lg z-[9999] opacity-0 transform translate-y-5 transition-all duration-300 pointer-events-none";
+  toast.className =
+    "fixed bottom-5 right-5 bg-green-500 text-white px-6 py-3 rounded shadow-lg z-50 opacity-0 transform translate-y-5 transition-all duration-300 pointer-events-none";
   toast.innerText = message;
   document.body.appendChild(toast);
-  
+
   // Trigger animation
   requestAnimationFrame(() => {
     toast.classList.remove("opacity-0", "translate-y-5");
