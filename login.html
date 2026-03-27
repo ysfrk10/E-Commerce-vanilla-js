@@ -9,6 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -21,6 +22,8 @@
     class="bg-gray-900 text-gray-100 min-h-screen flex items-center justify-center p-4"
   >
     <div
+      data-aos="zoom-in"
+      data-aos-duration="600"
       class="bg-gray-800 p-8 sm:p-10 rounded-xl shadow-2xl border border-gray-700 w-full max-w-md"
     >
       <div class="text-center mb-8">
@@ -136,5 +139,16 @@
         </div>
       </form>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: false,
+        offset: 100,
+      });
+      window.addEventListener("load", () => {
+        AOS.refreshHard();
+      });
+    </script>
   </body>
 </html>

@@ -9,6 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
     <link
       rel="stylesheet"
@@ -143,6 +144,8 @@
 
       <!-- Products Grid (4 cols on xl, 3 on lg, 2 on md) -->
       <div
+        data-aos="fade-up"
+        data-aos-delay="200"
         class="show-products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
       >
         <!-- Product Cards -->
@@ -199,6 +202,17 @@
         </div>
       </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: false,
+        offset: 100,
+      });
+      window.addEventListener("load", () => {
+        AOS.refreshHard();
+      });
+    </script>
     <script src="./cart.js"></script>
     <script src="./main.js"></script>
   </body>

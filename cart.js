@@ -34,6 +34,34 @@ function updateQuantity(id, change) {
   }
 }
 
+function showToast(message) {
+  const toast = document.createElement("div");
+  toast.className = "fixed bottom-5 right-5 bg-green-500 text-white px-6 py-3 rounded shadow-lg z-[9999] opacity-0 transform translate-y-5 transition-all duration-300 pointer-events-none";
+  toast.innerText = message;
+  document.body.appendChild(toast);
+  
+  // Trigger animation
+  requestAnimationFrame(() => {
+    toast.classList.remove("opacity-0", "translate-y-5");
+  });
+
+  setTimeout(() => {
+    toast.classList.add("opacity-0", "translate-y-5");
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}
+
+function checkout() {
+  if (cart.length === 0) {
+    showToast("Your cart is empty.");
+    return;
+  }
+  cart = [];
+  saveCart();
+  closeCartDrawer();
+  showToast("checkout done successfully");
+}
+
 function updateCartUI() {
   const cartItemsContainer = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
@@ -134,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <span id="cart-total" class="text-xl font-black text-blue-400">$0.00</span>
       </div>
 
-      <button class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg">
+      <button onclick="checkout()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg">
         Checkout
       </button>
     </div>

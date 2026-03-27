@@ -9,7 +9,7 @@ async function GetData() {
     );
     let res = await response.json();
     let Data = await res.data;
-   
+
     //#region Products Page
 
     // sort.addEventListener("change", (e) => {
@@ -123,6 +123,8 @@ async function GetData() {
     //     }
     //   }
     // });
+    //#endregion
+
     sort.addEventListener("change", (e) => {
       let SortValue = e.target.value;
       let sortedData = [...Data]; // copy
@@ -135,7 +137,10 @@ async function GetData() {
       products.innerHTML = "";
       sortedData.forEach((element) => {
         products.innerHTML += `
-      <div class="relative smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col">
+      <div 
+      data-aos="fade-up"
+      data-aos-delay="200"
+      class=" relative smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col">
         <div class="overflow-hidden rounded-t-xl">
           <img src="${element.imageCover}" class="w-full h-full object-cover" />
         </div>
@@ -154,7 +159,7 @@ async function GetData() {
               ${element.price} $
             </span>
 
-            <a href="#" onclick="event.preventDefault(); addToCart('${element.id}', \`${element.title.replace(/`/g, '')}\`, ${element.price}, '${element.imageCover}')" class="px-3 py-1.5 bg-gray-700 hover:bg-blue-600 rounded text-sm text-white transition-colors flex items-center gap-1 shadow-lg shadow-blue-500/20">
+            <a href="#" onclick="event.preventDefault(); addToCart('${element.id}', \`${element.title.replace(/`/g, "")}\`, ${element.price}, '${element.imageCover}')" class="px-3 py-1.5 bg-gray-700 hover:bg-blue-600 rounded text-sm text-white transition-colors flex items-center gap-1 shadow-lg shadow-blue-500/20">
               <i class="fas fa-cart-plus"></i> Add
             </a>
           </div>
@@ -166,7 +171,7 @@ async function GetData() {
 
     Data.forEach((element) => {
       products.innerHTML += `
-      <div class="relative smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col">
+      <div data-aos="fade-up" data-aos-delay="200"  class="relative smart-card bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 flex flex-col">
         <div class="overflow-hidden rounded-t-xl">
           <img src="${element.imageCover}" class="w-full h-full object-cover" />
         </div>
@@ -185,7 +190,7 @@ async function GetData() {
               ${element.price} $
             </span>
 
-            <a href="#" onclick="event.preventDefault(); addToCart('${element.id}', \`${element.title.replace(/`/g, '')}\`, ${element.price}, '${element.imageCover}')" class="px-3 py-1.5 bg-gray-700 hover:bg-blue-600 rounded text-sm text-white transition-colors flex items-center gap-1 shadow-lg shadow-blue-500/20">
+            <a href="#" onclick="event.preventDefault(); addToCart('${element.id}', \`${element.title.replace(/`/g, "")}\`, ${element.price}, '${element.imageCover}')" class="px-3 py-1.5 bg-gray-700 hover:bg-blue-600 rounded text-sm text-white transition-colors flex items-center gap-1 shadow-lg shadow-blue-500/20">
               <i class="fas fa-cart-plus"></i> Add
             </a>
           </div>
@@ -201,3 +206,12 @@ async function GetData() {
   }
 }
 GetData();
+
+AOS.init({
+  duration: 800,
+  once: false,
+  offset: 100,
+});
+window.addEventListener("load", () => {
+  AOS.refreshHard();
+});
