@@ -136,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
   <!-- Overlay -->
   <div id="overlay"
        class="fixed inset-0 bg-black/50 hidden z-40"></div>
-
   <!-- Cart Drawer -->
   <div id="cart-drawer"
        class="fixed inset-y-0 right-0 w-80 bg-gray-900 border-l border-gray-700 shadow-2xl
